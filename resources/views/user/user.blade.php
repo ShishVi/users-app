@@ -4,20 +4,33 @@
 
 @section('content')
 
-<div class="row justify-content-md-center">
-    <div class="col-md-4 mt-4">
-        <form action="{{route('user.countUsers')}}" method="GET" >
+<div class="d-flex flex-column align-items-center  mb-3">
+    
+        <div class="col-md-4">
+            <form action="{{route('user.countUsers')}}" method="GET" >
+                
+                <div class="mb-3 d-flex mt-4">
+                    <label for="name" class="form-label mx-3 mt-1">Имя</label>
+                    <input type="text" class="form-control mx-3" id="name" name="name" value="{{old('name')}}">
+                    <button type="submit" class="btn btn-info">Поиск</button>
+                </div>   
+                  
+                
+            </form>
             
-            <div class="mb-3 d-flex">
-                <label for="name" class="form-label mx-3 mt-1">Имя</label>
-                <input type="text" class="form-control mx-3" id="name" name="name" value="{{old('name')}}">
-                <button type="submit" class="btn btn-info">Поиск</button>
-            </div>   
-              
-            
-        </form>
-        
-    </div>
+        </div>
+        <div class="p-2">
+            <form action="{{route('user.topName')}}" method="GET" >           
+                <div class="mb-3 d-flex">
+                    <button type="submit" class="btn btn-info">ТОП-10 популярных имен</button>
+                </div>       
+            </form>
+        </div>
+
+</div>
+
+
+    
 </div>
 
 @endsection

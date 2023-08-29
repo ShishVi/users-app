@@ -24,4 +24,18 @@ class UserController extends Controller
         
 
     }
+
+    public function topNameUsers(){
+
+        $results = DB::table('users')
+                ->select(DB::raw('name, COUNT(*) as total'))
+                ->groupBy('name')
+                ->orderBy('total', 'desc')
+                ->take(10)
+                ->get();
+
+        return view('user.top-count-name', [
+            'users' => $results,
+        ]);
+    }
 }

@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [UserController::class, 'userPage'])->name('app.main');
 Route::get('countusers', [UserController::class, 'countUsers'])->name('user.countUsers');
 Route::get('top-name', [UserController::class, 'topNameUsers'])->name('user.topName');
+Route::get('average-age', [UserController::class, 'averageAgeUsers'])->name('user.averageAge');

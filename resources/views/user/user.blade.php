@@ -26,6 +26,13 @@
                 </div>       
             </form>
         </div>
+        <div class="p-2">
+            <form action="{{route('user.averageAge')}}" method="GET" >           
+                <div class="mb-3 d-flex">
+                    <button type="submit" class="btn btn-info">Средний возраст пользователей</button>
+                </div>       
+            </form>
+        </div>
 
 </div>
 

@@ -38,4 +38,14 @@ class UserController extends Controller
             'users' => $results,
         ]);
     }
+
+    public function averageAgeUsers(){
+
+        $result = DB::table('users')->select(DB::raw('avg(age) as total'))->get();
+        
+
+        return view('user.average-age-users', [
+            'age' => $result,
+        ]);
+    }
 }

@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AppController::class, 'index'])->name('app.main');
 
-Route::get('user', [UserController::class, 'userPage'])->name('user.page');
+Route::get('/', [UserController::class, 'userPage'])->name('app.main');
 Route::get('countusers', [UserController::class, 'countUsers'])->name('user.countUsers');
 Route::get('top-name', [UserController::class, 'topNameUsers'])->name('user.topName');

@@ -23,10 +23,14 @@
                         <td>{{$user->total}}</td>                
                     </tr> 
                 @endforeach             
-            </tbody>
+            </tbody>            
           </table>
-        
+                
     </div>
+    <div class="col-md-2 ">
+      <a href="{{route('app.main')}}" class="btn btn-primary mt-4 ms-4">Назад</a>
+    </div>    
 </div>
+ 
 
 @endsection

@@ -4,10 +4,13 @@
 
 @section('content')
 
-<div class="row justify-content-md-center">
-    <div class="col-md-8 mt-4 text-center">
-        <h4>Пользователей с именем {{$name}} - {{$count}} чел.</h4>
-        
+<div class="card my-4">
+    <div class="card-header">
+      Результат поиска
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Пользователей с именем {{$name}} - {{$count}} чел.</h5>      
+      <a href="{{route('app.main')}}" class="btn btn-primary mt-4">Назад</a>
     </div>
 </div>
 

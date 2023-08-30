@@ -20,3 +20,4 @@ Route::get('/', [UserController::class, 'userPage'])->name('app.main');
 Route::get('countusers', [UserController::class, 'countUsers'])->name('user.countUsers');
 Route::get('top-name', [UserController::class, 'topNameUsers'])->name('user.topName');
 Route::get('average-age', [UserController::class, 'averageAgeUsers'])->name('user.averageAge');
+Route::get('count-users-age', [UserController::class, 'numberUsersAge'])->name('user.numberAge');

@@ -13,6 +13,11 @@ class UserController extends Controller
     }
 
     public function countUsers(Request $request){
+
+        $request->validate([
+
+            'name' => 'required'
+        ]);
         
         $name = $request->name;
         $countUsers = DB::table('users')->where('name',  $name)->get()->count();
@@ -47,5 +52,30 @@ class UserController extends Controller
         return view('user.average-age-users', [
             'age' => $result,
         ]);
+    }
+
+    public function numberUsersAge(Request $request){
+
+        $request->validate([
+            'age_min' => 'required',
+            'age_max' => 'required',
+        ]);
+
+        $age_min = $request->age_min;
+        $age_max = $request->age_max;
+
+        if($age_min > $age_max){
+
+            return back();
+        }
+
+        $result = DB::table('users')->where('age', '<=', $age_max)->where('age', '>=', $age_min)->get()->count();
+
+        return view('user.number-users-age', [
+            'age_min' => $age_min,
+            'age_max' => $age_max,
+            'count' => $result,
+        ]);
+
     }
 }
